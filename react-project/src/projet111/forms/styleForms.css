@@ -1,0 +1,204 @@
+/*
+ * FormsStyle.css - עיצוב אחיד לכל טפסי הבקשה
+ */
+
+/* -------------------------------------------
+ * הגדרות בסיס ומשתנים גלובליים (ROOT)
+ * ------------------------------------------- */
+:root {
+    --primary-color: #007bff; /* כחול ראשי */
+    --secondary-color: #6c757d; /* אפור משני */
+    --success-color: #28a745; /* ירוק (לאישור) */
+    --error-color: #dc3545; /* אדום (לשגיאות) */
+    --main-text: #333;
+    --light-border: #b3ccff;
+    --light-bg: #f0f4f8;
+    --dark-blue: #004a99;
+}
+
+/* -------------------------------------------
+ * סגנון כללי ועוטף ראשי (עבור MultiForm - .mainDiv)
+ * ------------------------------------------- */
+.mainDiv {
+    max-width: 700px; /* ⬅️ כאן חייב להיות רק רווח רגיל */
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff; 
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 74, 153, 0.1); 
+    text-align: right;
+    font-family: Arial, sans-serif;
+}
+
+/* כותרת כללית של הטופס */
+.mainDiv h1 {
+    color: var(--dark-blue); 
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* -------------------------------------------
+ * ניווט שלבים (Step Navigation - .stpDiv)
+ * ------------------------------------------- */
+.stpDiv {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-bg); 
+}
+
+.step {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--light-bg); 
+    color: var(--dark-blue); 
+    border: 1px solid #a0c4ff; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.step.activeStep {
+    background-color: var(--primary-color); 
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+.step:hover:not(.activeStep) {
+    background-color: #d0e7ff;
+}
+
+
+/* -------------------------------------------
+ * שדות קלט וכותרות (עבור Details Components)
+ * ------------------------------------------- */
+.frmDiv {
+    padding: 20px 0;
+    min-height: 400px; 
+}
+.details-form-container { 
+    padding: 0 10px;
+}
+
+h5 {
+    color: var(--dark-blue); 
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--light-border); 
+    border-radius: 6px;
+    box-sizing: border-box; 
+    font-size: 1em;
+    color: var(--main-text);
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary-color); 
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* -------------------------------------------
+ * עיצוב שגיאות וולידציה
+ * ------------------------------------------- */
+.input-error {
+    border: 2px solid var(--error-color) !important; 
+}
+
+.error-message {
+    color: var(--error-color); 
+    font-size: 0.9em;
+    margin-top: -10px; 
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+
+/* -------------------------------------------
+ * כפתורי אישור בתוך שלב (Details Components)
+ * ------------------------------------------- */
+.frmDiv button { 
+    float: left; 
+    padding: 10px 25px;
+    margin-top: 20px;
+    background-color: var(--success-color); 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.frmDiv button:hover {
+    background-color: #1e7e34;
+}
+
+/* -------------------------------------------
+ * כפתורי ניווט (הבא/חזור - ב-MultiForm)
+ * ------------------------------------------- */
+.mainDiv .btn {
+    padding: 10px 25px;
+    margin-top: 25px;
+    margin-right: 15px; 
+    background-color: var(--dark-blue); 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.mainDiv .btn:hover {
+    background-color: #0056b3;
+}
+
+/* -------------------------------------------
+ * רכיב Submit (אישור סופי)
+ * ------------------------------------------- */
+
+/* כותרת אישור סופי */
+.frmDiv h2 {
+    color: var(--dark-blue);
+    font-size: 1.8em;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* כפתור אישור סופי (Permit) */
+.frmDiv button:first-of-type { 
+    background-color: var(--primary-color); 
+    color: white;
+    float: none; 
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/* כפתור ביטול סופי (Cancel) */
+.frmDiv button:last-of-type { 
+    background-color: var(--secondary-color); 
+    color: white;
+    float: none; 
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+}

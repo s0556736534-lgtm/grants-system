@@ -1,0 +1,703 @@
+
+/* Home.css */
+
+/* עיצוב כללי של דף הבית */
+.home-container {
+    max-width: 1200px; /* הגבלת הרוחב המקסימלי במרכז המסך */
+    margin: 0 auto; /* ממורכז */
+    padding: 20px;
+    font-family: Arial, sans-serif; /* גופן קריא */
+    text-align: right; /* יישור לימין (לשפה העברית) */
+}
+
+/* עיצוב הכותרת הראשית */
+.home-header {
+    background-color: #f0f4f8; /* רקע בהיר לכותרת */
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home-header h1 {
+    color: #004a99; /* כחול כהה */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.home-header .subtitle {
+    color: #555;
+    font-size: 1.2em;
+}
+
+/* עיצוב אזור התוכן המרכזי */
+.home-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* חלוקה ל-2 עמודות: תוכן ואזור פעולה */
+    gap: 30px;
+}
+
+/* סקציית אודות */
+.about-section {
+    padding: 20px;
+    border-left: 3px solid #007bff; /* קו הפרדה בצד שמאל */
+}
+
+/* סקציית קריאה לפעולה (CTA) */
+.cta-section {
+    background-color: #e6f7ff; /* רקע בהיר */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center; /* מרכוז כפתורים */
+}
+
+/* כותרות סקציות */
+.home-content h2 {
+    color: #004a99;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* כפתורים */
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #007bff; /* כחול ראשי */
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #0056b3;
+}
+
+.secondary-btn {
+    background-color: #6c757d; /* אפור משני */
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #5a6268;
+}
+
+/* סקציית מידע נוסף */
+.info-section {
+    grid-column: 1 / -1; /* פורש על כל הרוחב (אם יש צורך) */
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.info-section h3 {
+    color: #004a99;
+    margin-bottom: 10px;
+}
+
+.info-section ul {
+    list-style-type: none; /* הסרת כדורים */
+    padding: 0;
+}
+
+.info-section li {
+    margin-bottom: 5px;
+}
+
+.info-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.info-section a:hover {
+    text-decoration: underline;
+}
+
+/* עיצוב הכותרת התחתונה */
+.home-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* התאמה למסכים קטנים יותר */
+@media (max-width: 600px) {
+    .home-content {
+        grid-template-columns: 1fr; /* עמודה אחת במסכים קטנים */
+    }
+
+    .about-section {
+        border-left: none;
+        border-bottom: 3px solid #007bff; /* קו הפרדה תחתון במקום צדדי */
+        padding-bottom: 20px;
+    }
+
+    .home-header h1 {
+        font-size: 2em;
+    }
+}
+/*
+ * AdminRequests.css - עיצוב טבלת בקשות למנהל
+ * מותאם לגווני כחול רשמיים ומראה מודרני
+ */
+
+.admin-requests-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 74, 153, 0.1); /* צל כחול עדין */
+    text-align: right;
+    font-family: Arial, sans-serif;
+}
+
+.admin-requests-container h2 {
+    color: #004a99; 
+    font-size: 2em;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #007bff; 
+    text-align: center;
+}
+
+.no-requests {
+    text-align: center;
+    color: #6c757d;
+    font-size: 1.2em;
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 6px;
+}
+
+/* ------------------
+ * עיצוב הטבלה
+ * ------------------ */
+.requests-table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+    font-size: 1em;
+}
+
+/* כותרות העמודות */
+.requests-table thead th {
+    background-color: #007bff; 
+    color: white;
+    padding: 12px 15px;
+    text-align: right;
+    border-bottom: 3px solid #004a99;
+    font-weight: bold;
+}
+
+/* שורות גוף הטבלה */
+.requests-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+.requests-table tbody tr:nth-child(even) {
+    background-color: #f8faff; 
+}
+
+.requests-table tbody tr:hover {
+    background-color: #e6f7ff; 
+}
+
+/* נתוני התאים */
+.requests-table td {
+    padding: 15px;
+    vertical-align: middle;
+    color: #333;
+}
+
+.request-id {
+    font-weight: bold;
+    color: #004a99;
+}
+
+/* ------------------
+ * עיצוב הסטטוס (Status Badge)
+ * הערה: יש להתאים את המפתחות (למשל 'בדיקה-ראשונית') לשמות הסטטוסים האמיתיים שלך.
+ * ------------------ */
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-align: center;
+    min-width: 100px;
+    border-radius: 15px;
+    color: rgb(26, 26, 26);
+    font-weight: bold;
+    margin-right: 5px; /* מרווח קטן מהמילה 'סטטוס' */
+}
+
+
+/* סטטוסים לדוגמה */
+.status-בדיקה-ראשונית {
+    background-color: #ffc107; 
+    color: #333;
+}
+
+.status-ממתין-למסמכים {
+    background-color: #17a2b8; 
+    color: white;
+}
+
+/* ניתן להוסיף סטטוסים נוספים כרצונך */
+
+/* ------------------
+ * עיצוב כפתור הפעולה
+ * ------------------ */
+.action-btn {
+    padding: 8px 15px;
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.9em;
+}
+
+.action-btn:hover {
+    background-color: #0056b3;
+}
+/* NavStyle.css */
+
+/* -------------------------------------------
+ * עיצוב עוטף הסרגל העליון (Nav Bar)
+ * ------------------------------------------- */
+.div {
+    /* רקע בהיר, בדומה ל-home-header, או כחול כהה לבולטות */
+    background-color: #004a99; /* כחול כהה (הצבע של כותרות H1 בדף הבית) */
+    color: white; /* טקסט לבן */
+    height: 60px; /* גובה קבוע */
+    padding: 0 30px;
+    margin-bottom: 30px; /* רווח בין הסרגל לתוכן הדף */
+    
+    /* פריסה: יישור אלמנטים בשורה עם רווחים */
+    display: flex;
+    align-items: center; /* מרכוז אנכי */
+    justify-content: space-between; /* פיזור הפריטים */
+     direction: rtl;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* צל עדין למראה תלת מימדי */
+    font-family: Arial, sans-serif;
+}
+
+/* -------------------------------------------
+ * עיצוב כותרת הפתיחה ("שלום, [שם]")
+ * ------------------------------------------- */
+.div h1 {
+    font-size: 1.2em;
+    font-weight: 500; /* פחות בולט מכותרת דף רגילה */
+    color: #f0f4f8; /* כחול בהיר/לבן עדין */
+    margin: 0; /* ביטול מרווחים פנימיים */
+    padding-left: 20px; /* רווח מהצד של הלינקים */
+    border-left: 1px solid rgba(255, 255, 255, 0.3); /* קו הפרדה עדין */
+ 
+}
+
+/* -------------------------------------------
+ * עיצוב הלינקים (NavLink)
+ * ------------------------------------------- */
+.link {   
+   
+    color: #f0f4f8; /* צבע טקסט לבן בהיר */
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0 15px;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s, border-radius 0.3s;
+    border-bottom: 2px solid transparent; /* הכנה לקו תחתון ב-hover/active */
+}
+
+.link:hover {
+    color: white; /* צבע טקסט לבן יותר ב-hover */
+    background-color: rgba(255, 255, 255, 0.1); /* רקע עדין ב-hover */
+    border-radius: 4px;
+}
+
+/* -------------------------------------------
+ * עיצוב הלינק הפעיל (Active Link)
+ * ------------------------------------------- */
+.link.active {
+    color: #ffd700; /* צהוב-זהב או צבע בולט אחר להדגשת הלינק הפעיל */
+    /* או שימוש בכחול בהיר להדגשה: */
+    /* color: #a0c4ff; */
+    border-bottom: 2px solid #ffd700; /* קו תחתון בולט */
+    font-weight: 700;
+}
+
+/* -------------------------------------------
+ * התאמה לעברית (יישור לימין)
+ * ------------------------------------------- */
+/* כדי לשלוט בסדר, ניתן לעטוף את הלינקים ב-div נפרד */
+.links-wrapper {
+    display: flex;
+    flex-direction: row-reverse; /* לינקים יתחילו מימין */
+}
+/* שינוי ב-ViewRequests.js: יש לוודא שה-H1 מופיע בצד ימין ואחריו הלינקים */
+/* --- AuthFormsClean.css --- */
+
+/* ==================================================== */
+/* 1. הגדרות בסיס ומשתנים גלובליים (ROOT & Global) */
+/* ==================================================== */
+
+:root {
+    /* משתני צבעים ראשיים */
+    --primary-color: #007bff; /* כחול ראשי - כפתורים, קישורים */
+    --secondary-color: #6c757d; /* אפור משני */
+    --main-bg: #f8f9fa; /* רקע כללי בהיר */
+    --card-bg: #ffffff; /* רקע לכרטיסים/טפסים */
+    --main-text: #343a40; /* צבע טקסט ראשי */
+    --border-color: #dee2e6; /* צבע גבולות עדין */
+    --error-color: #dc3545; /* אדום לשגיאות */
+}
+
+body {
+    /* direction: rtl;  */
+    font-family: 'Arial', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--main-text);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* ==================================================== */
+/* 2. עיצוב כפתורים גלובלי (Shared Buttons) */
+/* משמש גם בטפסים הרב-שלביים */
+/* ==================================================== */
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    font-weight: bold;
+}
+
+/* כפתור ראשי (כניסה / הרשמה / הבא) */
+.btn.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+.btn.primary-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* כפתור משני (ביטול / חזור) */
+.btn.secondary-btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+.btn.secondary-btn:hover {
+    background-color: #5a6268;
+}
+
+/* ==================================================== */
+/* 3. עיצוב דפי אימות (Login & Register) */
+/* ==================================================== */
+
+.auth-page-container {
+    /* ממקם את הטופס במרכז המסך (גובה ורוחב) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form {
+    /* מיכל הטופס הראשי - הכרטיס המרכזי */
+    max-width: 400px;
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* צל עדין */
+    text-align: center;
+}
+
+.login-form, .signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form h2, .signup-form h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+/* אייקון משתמש */
+.login-form i, .signup-form i {
+    font-size: 3.5em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------- */
+/* 4. שדות קלט בדפי אימות (Login & Register) */
+/* ---------------------------------------------------- */
+
+.user-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.user-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    outline: none;
+}
+
+/* ---------------------------------------------------- */
+/* 5. קישורי עזר (כבר רשום? Sign In / Sign Up) */
+/* ---------------------------------------------------- */
+
+.options-02 {
+    font-size: 0.9em;
+    color: var(--main-text);
+    margin-top: 10px;
+}
+
+.options-02 a {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s;
+    border-bottom: 1px solid transparent; 
+    padding-bottom: 2px;
+    margin-right: 5px; /* מרווח קטן לטקסט */
+}
+
+.options-02 a:hover {
+    color: #0056b3;
+    border-bottom: 1px solid #0056b3;
+}
+
+/* ==================================================== */
+/* 6. עיצוב כללי לטפסים הרב-שלביים (Multi-Form) */
+/* (נכלל כאן לשם שלמות ושימוש עקבי במשתנים) */
+/* ==================================================== */
+
+.mainDiv {
+    /* המיכל הראשי של הטפסים ממוקם במרכז הדף */
+    max-width: 800px;
+    margin: 40px auto; 
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* סרגל הצעדים
+.stpDiv {
+    /* ... עיצוב סרגל הצעדים ... */
+/* } */
+
+/* ... שגיאות וולידציה ... */
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9em;
+    margin-top: 5px;
+    font-weight: 500;
+}
+.form-group input.error {
+    border: 2px solid var(--error-color);
+}
+/* ----------------------------עיצוב לפרטי הבקשה הנוכחית אצל המנהל------------------------ */
+/* RequestDetails.css */
+
+/* עיצוב כללי של העמוד */
+.request-details-page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* רקע בהיר לעמוד */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    direction: rtl;
+}
+
+/* כותרת הדף והסטטוס */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    color: #343a40;
+    font-size: 2em;
+}
+
+.request-id {
+    font-weight: bold;
+    color: #007bff; /* צבע כחול למספר ה-ID */
+}
+
+/* תגית סטטוס */
+.status-indicator {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+
+
+/* צבעי סטטוס ספציפיים */
+.status-approved {
+    background-color: #28a745; /* ירוק לאישור */
+}
+
+.status-pending {
+    background-color: #ffc107; /* צהוב להמתנה */
+}
+
+.status-rejected {
+    background-color: #dc3545; /* אדום לסירוב */
+}
+
+/* פריסת הנתונים ב-Grid (2x2 במחשב, 1x4 במובייל) */
+.details-grid {
+    display: grid;
+    /* 2 עמודות בגדלים שווים עם מרווח של 20px ביניהן */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* כרטיס פרט בודד */
+.detail-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל עדין להבלטה */
+    transition: transform 0.2s;
+    border-right: 5px solid #007bff; /* פס צבעוני קטן מצד ימין */
+}
+
+.detail-card:hover {
+    transform: translateY(-3px); /* אפקט עכבר עדין */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.detail-card h3 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #e9ecef;
+    padding-bottom: 10px;
+    font-size: 1.4em;
+}
+
+/* פריט פרט בודד בתוך הכרטיס */
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dotted #f1f1f1;
+    line-height: 1.6;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #495057;
+    text-align: right;
+    width: 40%;
+}
+
+.detail-value {
+    color: #212529;
+    text-align: left;
+    width: 60%;
+}
+
+/* כפתורי פעולה */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.action-buttons button {
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.action-buttons button:active {
+    transform: translateY(1px);
+}
+
+.allow-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.allow-btn:hover {
+    background-color: #218838;
+}
+
+.reject-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.reject-btn:hover {
+    background-color: #c82333;
+}
+
+/* התאמה למסכים קטנים יותר (רספונסיביות) */
+@media (max-width: 600px) {
+    .details-grid {
+        /* מעבר לפריסה של עמודה אחת במסכים קטנים */
+        grid-template-columns: 1fr;
+    }
+}

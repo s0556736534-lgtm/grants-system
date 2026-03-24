@@ -1,0 +1,58 @@
+/* _____________הודעת סטטוס לסטודנט_______________________________ */
+/* StatusStyles.css */
+
+/* -------------------------------------------
+ * קונטיינר כללי להצגת הסטטוס
+ * ------------------------------------------- */
+.status-container {
+    display: flex;
+    justify-content: center; /* מרכז אופקית */
+    align-items: center;     /* מרכז אנכית */
+    min-height: 40vh;        /* גובה מינימלי להצגה במרכז הדף */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* -------------------------------------------
+ * עיצוב כללי לכותרות הסטטוס (h1)
+ * ------------------------------------------- */
+.status-container h1 {
+    padding: 30px 40px;
+    border-radius: 12px;
+    font-size: 2.2em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* צל עדין */
+    transition: transform 0.3s ease-in-out;
+}
+
+.status-container h1:hover {
+    transform: translateY(-3px); /* אפקט קל בריחוף */
+}
+
+/* -------------------------------------------
+ * עיצוב ספציפי לסטטוס 'ממתין'
+ * ------------------------------------------- */
+.status-pending {
+    background-color: #fff3cd; /* צהוב בהיר */
+    color: #856404;           /* טקסט צהוב כהה */
+    border: 1px solid #ffeeba;
+}
+
+/* -------------------------------------------
+ * עיצוב ספציפי לסטטוס 'אושר'
+ * ------------------------------------------- */
+.status-allow {
+    background-color: #d4edda; /* ירוק בהיר */
+    color: #155724;           /* טקסט ירוק כהה */
+    border: 1px solid #c3e6cb;
+}
+
+/* -------------------------------------------
+ * עיצוב ספציפי לסטטוס 'נדחה'
+ * ------------------------------------------- */
+.status-reject {
+    background-color: #f8d7da; /* אדום בהיר */
+    color: #721c24;           /* טקסט אדום כהה */
+    border: 1px solid #f5c6cb;
+}
