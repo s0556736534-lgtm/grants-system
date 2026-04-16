@@ -40,5 +40,12 @@ This project is a full-stack web application designed to streamline the process 
 ## ⚙️ Setup & Installation | התקנה והרצה
 
 1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/s0556736534-lgtm/grants-system.git](https://github.com/s0556736534-lgtm/grants-system.git)
+   `git clone https://github.com/s0556736534-lgtm/grants-system.git`
+
+2. **Install dependencies for both Client and Server:**
+   - **Inside /client:** `npm install`
+   - **Inside /server:** `npm install`
+
+3. **Run the project:**
+   - **Start Server:** (מתוך תיקיית ה-server) `npm start`
+   - **Start Client:** (מתוך תיקיית ה-client) `npm start`
